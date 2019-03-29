@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="../_css/estiloCad.css"/>
+    <script type="text/javascript" src="../_javascript/validacao.js"></script>
+</head>
+    <body>
+        <nav id="menu">
+            <ul type="disc">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="breve.html">Sobre-nós</a></li>
+            </ul>
+        </nav>
+        <section>
+            <form method="POST" name="cadas" action="pag.html" onSubmit="return validacao();">
+                <fieldset>
+                    <h1>Cadastre-se</h1>
+                    Nome: <span style="margin-left: 590px;">Data de Nascimento:</span> <br>
+                    <input class="c1" type="text" maxlength="40" name="nome" placeholder="Nome completo" required autofocus>
+                    <input class="c2" type="date" name="data" required><br>
+                    <br>Sexo: <span style="margin-left: 255px;">E-mail: </span><br>
+                    <input type="radio" name="sex" value="male" required> Masculino
+                    <input type="radio" name="sex" value="female" required> Feminino
+                    <input class="c3" type="email" maxlength="40" name="email" placeholder="E-mail" required><br>
+                    <br>Usúario: <span style="margin-left: 235px;">Senha: </span> <span style="margin-left: 245px;">Celular: </span><br>
+                    <input class="c4" type="text" name="usuario" placeholder="Nome de Usúario" required>
+                    <input class="c4" type="password" maxlength="15" name="senha" placeholder="Senha" required>
+                    <input class="c4" type="tel" maxlength="11" name="telefone" placeholder="Celular com DDD" required><br>
+                    <br><span style="margin-left: 40%;"><input type="submit" name="botao" value="Concluir" class="bot"></span>
+                </fieldset> 
+            </form>
+        </section>
+    </body>
+</html>
