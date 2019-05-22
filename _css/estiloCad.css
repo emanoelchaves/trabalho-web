@@ -55,38 +55,18 @@ section{
 	background: rgba(0,0,0,.7);
 }
 
-.c1{
+input{
     border-radius: 15px;
     padding: 10px;
     margin-right: 95px;
     width: 515px;
     height: 15px;
 }
-.c2{
-    border-radius: 15px;
-    padding: 10px;
-    margin-right: 95px;
-    width: 150px;
-    height: 15px;
-}
-.c3{
-    border-radius: 15px;
-    padding: 10px;
-    margin-left: 100px;
-    width: 500px;
-    height: 15px;
-}
-.c4{
-    border-radius: 15px;
-    padding: 10px;
-    margin-right: 70px;
-    width: 200px;
-    height: 15px;
-}
 
-#botao{ text-align: center }
+
 .bot
 {
+    text-align: center;
     border: none;
     outline: none;
     height: 40px;

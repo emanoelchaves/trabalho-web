@@ -1,36 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastre-se</title>
     <link rel="stylesheet" href="../_css/estiloCad.css"/>
     <script type="text/javascript" src="../_javascript/validacao.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script src="js/axios.min.js"></script>
 </head>
-    <body>
+
+<body>
         <nav id="menu">
-            <ul type="disc">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="breve.html">Sobre-nós</a></li>
-            </ul>
-        </nav>
+                <ul type="disc">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="breve.html">Sobre-nós</a></li>
+                </ul>
+            </nav>
+    <div class=container>
         <section>
-            <form method="POST" name="cadas" action="pag.html" onSubmit="return validacao();">
-                <fieldset>
-                    <h1>Cadastre-se</h1>
-                    Nome: <span style="margin-left: 590px;">Data de Nascimento:</span> <br>
-                    <input class="c1" type="text" maxlength="40" name="nome" placeholder="Nome completo" required autofocus>
-                    <input class="c2" type="date" name="data" required><br>
-                    <br>Sexo: <span style="margin-left: 255px;">E-mail: </span><br>
-                    <input type="radio" name="sex" value="male" required> Masculino
-                    <input type="radio" name="sex" value="female" required> Feminino
-                    <input class="c3" type="email" maxlength="40" name="email" placeholder="E-mail" required><br>
-                    <br>Usúario: <span style="margin-left: 235px;">Senha: </span> <span style="margin-left: 245px;">Celular: </span><br>
-                    <input class="c4" type="text" name="usuario" placeholder="Nome de Usúario" required>
-                    <input class="c4" type="password" maxlength="15" name="senha" placeholder="Senha" required>
-                    <input class="c4" type="tel" maxlength="11" name="telefone" placeholder="Celular com DDD" required><br>
-                    <br><span style="margin-left: 40%;"><input type="submit" name="botao" value="Concluir" class="bot"></span>
-                </fieldset> 
-            </form>
+        <div id="app">
+            <h1>Cadastre-se</h1>
+            <div class="form-group">
+                <label for="username">Username: </label>
+                <input class="form-control" type="text" v-model="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password: </label>
+               &nbsp; <input class="form-control" type="password" v-model="password">
+            </div>
+            <div class="form-group">
+                    <label for="name">Nome: </label>
+                    &emsp;&emsp;<input class="form-control" type="text" v-model="name">
+                </div>
+            <button class="bot" type="button" @click="submit">Inserir</button>
         </section>
-    </body>
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    url: "http://localhost:8080/rest_persistence/api/users",
+                    username: null,
+                    password: null,
+                    name: null
+                },
+                methods: {
+                    submit() {
+                        let formData = new FormData();
+                        formData.append('name', this.name);
+                        formData.append('username', this.username);
+                        formData.append('password', this.password);
+                        axios.post(this.url,
+                            formData,
+                            {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }
+                            }
+                        ).then(function (r) {
+                            console.log(r.data);
+                            window.location.replace("pag.html");
+                        }).catch(function (error) {
+                            console.log(erro);
+                        });
+                    },
+                    handleFileUpload() {
+                        this.file = this.$refs.file.files[0];                        
+                    }
+                }
+            });
+        </script>
+</body>
+
 </html>

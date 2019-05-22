@@ -67,7 +67,6 @@ h1{
     border:none;
     height:32px;
     width:191px;
-    
 }
    
 #btnBusca{
@@ -75,52 +74,18 @@ h1{
     border-radius:7px 7px 7px 7px;
     width:70px;
     font-weight:bold;  
-    cursor: pointer;
-    border: none;
-    outline: none;
-    margin: auto;
-    background: #B8860B;
-    color: #fff;
 }
 #btnCad{
     height:32px;
     border-radius:7px 7px 7px 7px;
     width:120px;
     font-weight:bold;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    margin: auto;
-    background: #B8860B;
-    color: #fff;
 }
 #btnPerf{
     height:32px;
     border-radius:7px 7px 7px 7px;
     width:100px;
     font-weight:bold;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    margin: auto;
-    background: #B8860B;
-    color: #fff;
-}
-
-#btnPerf:hover{
-    cursor: pointer;
-    background: #DAA520;
-    color: #000;
-}
-#btnCad:hover{
-    cursor: pointer;
-    background: #DAA520;
-    color: #000;
-}
-#btnBusca:hover{
-    cursor: pointer;
-    background: #DAA520;
-    color: #000;
 }
    
 #cabecalho img{

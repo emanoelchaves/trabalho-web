@@ -36,18 +36,7 @@ nav#menu a:hover {
     height:32px;
     border-radius:7px 7px 7px 7px;
     width:100px;
-    font-weight:bold;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    margin: auto;
-    background: #B8860B;
-    color: #fff;
-}
-#btnVolta:hover{
-    cursor: pointer;
-    background: #DAA520;
-    color: #000;
+    font-weight:bold;  
 }
 section{
     position: absolute;
@@ -78,6 +67,13 @@ img{
 }
 
 #mensagem{
-   text-align: center;
+    width: 30%;
+    height: 30%;
+    margin-top: 3%;
+    margin-left: 3%;
     font-family: Arial, Helvetica, sans-serif;
+}
+.enviar{
+    width: 350px;
+    height: 100px;
 }
